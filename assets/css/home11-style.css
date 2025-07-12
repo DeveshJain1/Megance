@@ -13,7 +13,9 @@
   padding   : 0;
   box-sizing: border-box;
 }
-
+ html {
+    scroll-behavior: smooth;
+  }
 /* --------------- Menu --------------- */
 .navbar {
   position  : absolute;
@@ -831,11 +833,13 @@
 }
 
 .faq-answer {
-  padding : 0 20px;
-  height  : 0;
-  overflow: hidden;
-  opacity : 0;
+  padding     : 0 20px;
+  max-height  : 0;
+  overflow    : hidden;
+  opacity     : 0;
+  transition  : max-height 0.5s ease, opacity 0.3s ease;
 }
+
 
 .faq-answer p {
   margin   : 15px 0 0 0;

@@ -141,31 +141,65 @@ $(function () {
 //         });
 //     }
 // });
+// $(function () {
+//     $(".faq-question").on("click", function () {
+//         const answer = $(this).next(".faq-answer");
+//         const arrow = $(this).find(".arrow");
+
+//         // Close other answers
+//         $(".faq-answer").not(answer).each(function () {
+//             gsap.to(this, { height: 0, opacity: 0, duration: 0.3 });
+//         });
+//         $(".arrow").not(arrow).each(function () {
+//             gsap.to(this, { rotation: 0, duration: 0.3 });
+//         });
+
+//         if (answer.height() > 0) {
+//             // Collapse current
+//             gsap.to(answer, { height: 0, opacity: 0, duration: 0.3 });
+//             gsap.to(arrow, { rotation: 0, duration: 0.3 });
+//         } else {
+//             // Expand current
+//             const contentHeight = answer.children("p").outerHeight(true) + 20;
+//             gsap.to(answer, { height: contentHeight, opacity: 1, duration: 0.3 });
+//             gsap.to(arrow, { rotation: 180, duration: 0.3 });
+//         }
+//     });
+// });
 $(function () {
-    $(".faq-question").on("click", function () {
+    $(".faq-question").on("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
         const answer = $(this).next(".faq-answer");
         const arrow = $(this).find(".arrow");
 
-        // Close other answers
+        // Collapse other answers
         $(".faq-answer").not(answer).each(function () {
-            gsap.to(this, { height: 0, opacity: 0, duration: 0.3 });
+            gsap.to(this, { maxHeight: 0, opacity: 0, duration: 0.3 });
         });
         $(".arrow").not(arrow).each(function () {
             gsap.to(this, { rotation: 0, duration: 0.3 });
         });
 
-        if (answer.height() > 0) {
+        if (answer.css("max-height") !== "0px") {
             // Collapse current
-            gsap.to(answer, { height: 0, opacity: 0, duration: 0.3 });
-            gsap.to(arrow, { rotation: 0, duration: 0.3 });
+            gsap.to(answer[0], { maxHeight: 0, opacity: 0, duration: 0.3 });
+            gsap.to(arrow[0], { rotation: 0, duration: 0.3 });
         } else {
             // Expand current
-            const contentHeight = answer.children("p").outerHeight(true) + 20;
-            gsap.to(answer, { height: contentHeight, opacity: 1, duration: 0.3 });
-            gsap.to(arrow, { rotation: 180, duration: 0.3 });
+            const scrollHeight = answer[0].scrollHeight + "px";
+            gsap.to(answer[0], {
+                maxHeight: scrollHeight,
+                opacity: 1,
+                duration: 0.3,
+                onUpdate: ScrollTrigger.refresh // ✅ Tell GSAP scroll has changed
+            });
+            gsap.to(arrow[0], { rotation: 180, duration: 0.3 });
         }
     });
 });
+
   $(function () {
     const logo = document.querySelector(".logo");
 
