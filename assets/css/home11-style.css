@@ -43,18 +43,41 @@
   backdrop-filter        : blur(10px);
 }
 
-.navbar .logo {
-  padding      : 7px 15px;
-  border       : 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
+.logo-wrapper {
+  position: relative;
+  z-index: 99999;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.logo-wrapper img {
+  height: auto;
+  width: 150px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 99999;
+   transition: all 0.3s ease;
 }
 
 .navbar .navbar-nav {
-  color        : #000;
-  padding      : 2px 5px;
-  border       : 1px solid rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0.25); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Core: Blur behind the element */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  color: #000; /* Text remains dark and readable */
+  padding: 2px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 30px;
-  margin-left  : 15px;
+  margin-left: 15px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -62,6 +85,8 @@
   border-radius: 30px;
   font-size    : 14px;
   color        : #000;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  font-weight: 500;
 }
 
 .navbar .navbar-nav .nav-link.active {
@@ -77,6 +102,7 @@
 
 .logo {
   width: 160px;
+
 }
 
 /* --------------- header --------------- */
@@ -567,6 +593,7 @@
   color: var(--bg-color); */
   position: relative;
   overflow: hidden;
+  box-sizing: 16px 35px 25px BLACK;
 }
 
 .work-card-ms .sec-head-xlg h2 {
@@ -576,10 +603,17 @@
 
 .works_heading {
   font-family: 'NIKE Futura ND', sans-serif;
+  color: #fff;
 }
 
 .work-card-ms .card-item {
-  margin-top: 50px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    will-change: transform;
+    background: #111;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
 }
 
 .work-card-ms .card-item .img {
@@ -656,7 +690,7 @@
 
 .marquee-content span {
   margin-right: 50px;
-  font-size   : 18px;
+  font-size   : 20px;
 }
 
 @keyframes scroll-left {
@@ -1222,6 +1256,9 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  .header-ms{
+    padding-bottom: 100px;
+  }
   .header-ms .caption h1 {
     font-size: 50px;
   }
@@ -1267,82 +1304,54 @@ p {
 }
 
 /* ==================== Creators Section ==================== */
-  .zeller_section {
-      position: relative;
-      overflow: hidden;
-       width: 100%;
-      height: 100%;
-      background: url("../imgs/creators.jpg") center center/cover no-repeat;
-      background-position: fixed;
-    }
-    
-    .zeller_bg {
-      /* position: absolute; */
-      position: relative;
-      top: 0;
-      left: 0;
-     
-      z-index: 0;
-    }
-
-    .zeller_overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .zeller_content {
-      position: relative;
-      z-index: 2;
-      padding: 35vh 2rem 0;
-      text-align: center;
-    }
-
-    .zeller_content h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      opacity: 0;
-      transform: translateY(60px);
-    }
-
-    .zeller_content p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      opacity: 0;
-      transform: translateY(60px);
-    }
-
-    .zeller_cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 70vh auto;
-      padding: 0 2rem;
-    }
-
-    .zeller_card {
-      background: #111;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      transform: translateY(80px);
-      opacity: 0;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-
-    .zeller_card img {
-      max-width: 100%;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .zeller_card h3 {
-      margin: 0.5rem 0 0.25rem;
-    }
+ .zeller_section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 0;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+}
+.zeller_bg {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  top: -25%;
+  left: 0;
+  background: url('../imgs/creators.jpg') no-repeat center center/cover;
+  z-index: 0;
+}
+.zeller_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.zeller_content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.zeller_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 60vh;
+}
+.zeller_card {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.zeller_card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}

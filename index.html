@@ -46,21 +46,19 @@
 
     <div class="loader-wrap">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" />
         </svg>
 
         <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>L</span>
-                <span>o</span>
-                <span>a</span>
-                <span>d</span>
-                <span>i</span>
-                <span>n</span>
-                <span>g</span>
+            <div class="logo-blink">
+                <img src="/assets/imgs/megance_logo_w.png" style="width: 400px;" alt="logo" />
             </div>
+            <!-- <div class="load-text">
+                <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+            </div> -->
         </div>
     </div>
+
 
     <!-- ==================== End Loading ==================== -->
 
@@ -84,10 +82,9 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-
             <!-- Logo -->
-            <a class="logo" href="#">
-                <img src="assets/imgs/megance_logo_w.png" alt="logo">
+            <a class="logo-wrapper">
+                <img src="/assets/imgs/megance_logo_w.png" alt="Megance Logo">
             </a>
 
             <!-- navbar links -->
@@ -117,8 +114,17 @@
                         </span>
                     </div>
                 </a>
+
                 <div class="menu-icon cursor-pointer">
-                    <span class="icon ti-align-right"></span>
+                    <div style=" background-color: rgba(255, 255, 255, 0.25); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Core: Blur behind the element */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  color: #000; /* Text remains dark and readable */
+  padding:2px 5px;
+    border-radius: 10%;
+  margin-left: 15px;">
+                        <span class="icon ti-align-right"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -634,24 +640,24 @@
 
                         <div class="zeller_cards">
                             <div class="zeller_card fade-up">
-                                <img src="https://source.unsplash.com/random/300x200?sig=11" alt="Card 1">
+                                <img src="./assets/imgs/shoes/s1.png" alt="Card 1">
                                 <h3>Design X</h3>
                                 <p>Bold and functional</p>
                             </div>
                             <div class="zeller_card fade-up">
-                                <img src="https://source.unsplash.com/random/300x200?sig=22" alt="Card 2">
+                                <img src="./assets/imgs/shoes/s1.png" alt="Card 2">
                                 <h3>Runner</h3>
                                 <p>Speed meets comfort</p>
                             </div>
                             <div class="zeller_card fade-up">
-                                <img src="https://source.unsplash.com/random/300x200?sig=33" alt="Card 3">
+                                <img src="./assets/imgs/shoes/s1.png" alt="Card 3">
                                 <h3>Urban Grid</h3>
                                 <p>Built for city steps</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <section class="services-ms section-padding" data-overlay-dark="0">
+                <!-- <section class="services-ms section-padding" data-overlay-dark="0">
                     <div class="container">
                         <div class="sec-head text-center mb-70">
                             <h6 class="sub-title main-color  mb-15">What we offers</h6>
@@ -735,10 +741,58 @@
                     <div class="shape">
                         <img src="assets/imgs/services/shape-circle.svg" alt="">
                     </div>
-                </section>
+                </section> -->
 
                 <!-- ==================== End Services ==================== -->
 
+
+                <section class="testim-sm section-padding"
+                    style="background-color: rgb(231, 237, 18); padding-bottom: 100px;">
+                    <div class="container">
+                        <div class="sec-head text-center mb-100">
+                            <h6 class="sub-title main-color mb-15">Gallery</h6>
+                            <h3 class="text-u">Our Shoes on Feets</h3>
+                        </div>
+                        <div class="swiper testim-swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+
+                                        <img src="./assets/imgs/shoes/s1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+
+                                        <img src="./assets/imgs/shoes/s1.png" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+
+                                        <img src="./assets/imgs/shoes/s1.png" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+
+                                        <img src="./assets/imgs/shoes/s1.png" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+
+                                        <img src="./assets/imgs/shoes/s1.png" alt="">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
 
                 <!-- ==================== Start Testimonials ==================== -->
@@ -1090,7 +1144,7 @@
                 </section>
                 <!-- ==================== Start Blog ==================== -->
 
-                <div class="blog-mp section-padding bg-gray">
+                <!-- <div class="blog-mp section-padding bg-gray">
                     <div class="container">
                         <div class="sec-head text-center mb-100">
                             <h6 class="sub-title main-color mb-15">Our Blog</h6>
@@ -1192,7 +1246,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- ==================== End Blog ==================== -->
 
@@ -1222,11 +1276,15 @@
 
             <!-- ==================== Start Footer ==================== -->
 
-            <footer class="footer-sa ">
+            <footer class="footer-sa pb-80">
                 <div class="container section-padding">
                     <div class="sec-head mb-80">
                         <div class="row">
-
+                            <div class="col-lg-5">
+                                <a href="#" class="logo md-mb50">
+                                    <img src="assets/imgs/megance_logo_w.png" alt="">
+                                </a>
+                            </div>
                             <div class="col-lg-6">
                                 <h4>We hope to empower user and simplify
                                     <span class="sub-color inline">their everyday lives.</span>
@@ -1294,11 +1352,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer_center">
-                    <a href="#" class="footer_logo">
-                        <img src="assets/imgs/megance_logo_w.png" alt="">
-                    </a>
-                </div>
             </footer>
         </div>
     </div>
@@ -1314,7 +1367,6 @@
     <!-- GSAP -->
     <script src="/common/js/gsap_lib/ScrollSmoother.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="/common/js/gsap_lib/SplitText.min.js"></script>
 
@@ -1357,7 +1409,7 @@
             window.swiperResizeTimeout = setTimeout(initSwiper, 200); // debounce
         });
     </script>
-    <script>
+    <!-- <script>
        gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray('.fade-up').forEach((el) => {
@@ -1393,8 +1445,185 @@
       },
       y: -100
     });
-      </script>
+      </script> -->
+    <script>
+        window.addEventListener("load", function () {
+            "use strict";
+            gsap.registerPlugin(ScrollTrigger);
 
+            // Parallax Background
+            gsap.to(".zeller_bg", {
+                y: -100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".zeller_section",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            // Overlay fade out on scroll
+            gsap.to(".zeller_overlay", {
+                opacity: 0,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".zeller_section",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                }
+            });
+            gsap.to(".zeller_overlay", {
+                backgroundColor: "rgba(0, 0, 0, 0.85)", // darker on scroll
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".zeller_section",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                    // markers: true // Uncomment to debug
+                }
+            });
+            // Zeller content zoom out + fade
+            gsap.from(".zeller_content", {
+                opacity: 0,
+                y: 100,
+                scale: 0.95,
+                duration: 1.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".zeller_content",
+                    start: "top 80%",
+                    end: "top 50%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+            // gsap.fromTo(".zeller_overlay",
+            //     { backgroundColor: "rgba(0, 0, 0, 0.3)" },
+            //     {
+            //         backgroundColor: "rgba(0, 0, 0, 0.85)",
+            //         ease: "none",
+            //         scrollTrigger: {
+            //             trigger: ".zeller_section",
+            //             start: "top center",
+            //             end: "bottom center",
+            //             scrub: true
+            //         }
+            //     });
+            // Cards staggered scroll-based fade-up and parallax
+            gsap.utils.toArray(".zeller_card").forEach((card, i) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 50,
+                    scale: 0.95,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "top 70%",
+                        scrub: false,
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            ScrollTrigger.refresh();
+        });
+
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            "use strict";
+            gsap.registerPlugin(ScrollTrigger);
+            const cards = gsap.utils.toArray(".work-card-ms .cards .card-item");
+
+            cards.forEach((card, index) => {
+                gsap.to(card, {
+                    y: -100,
+                    scale: 0.95,
+                    rotationX: 5,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "center center",
+                        end: "bottom center",
+                        pin: true,
+                        scrub: true,
+                        pinSpacing: true,
+                        markers: false // change to true for debugging
+                    }
+                });
+            });
+
+            // Ensure proper layout and trigger recalculation
+            ScrollTrigger.refresh();
+        });
+
+    </script>
+<!-- <script>
+    window.addEventListener("load", function () {
+  gsap.to(".loader-wrap-heading", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.to(".loader-wrap", {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    delay: 0.5,
+    onComplete: () => {
+      document.querySelector(".loader-wrap").style.display = "none";
+    }
+  });
+});
+
+</script> -->
+<script>
+    window.addEventListener("load", function () {
+  const loaderWrap = document.querySelector(".loader-wrap");
+  const loaderHeading = document.querySelector(".loader-wrap-heading");
+  const logo = document.querySelector(".logo-blink img");
+
+  // 1. Logo appears
+  gsap.fromTo(
+    logo,
+    { opacity: 0, scale: 0.8 },
+    {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      ease: "power3.out"
+    }
+  );
+
+  // 2. After 2s, animate logo + text OUT fast
+  gsap.delayedCall(2, () => {
+    gsap.to(loaderHeading, {
+      opacity: 0,
+      y: -60,
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        // 3. Once logo+text are gone, fade out background
+        gsap.to(loaderWrap, {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          onComplete: () => {
+            loaderWrap.style.display = "none";
+          }
+        });
+      }
+    });
+  });
+});
+
+</script>
 </body>
 
 </html>

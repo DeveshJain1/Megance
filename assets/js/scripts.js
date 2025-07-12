@@ -76,35 +76,71 @@ $(function () {
 
 //     }
 // });
+// $(function () {
+//     const width = $(window).width();
 
-$(function () {
-    const width = $(window).width();
+//     if (width >= 0) { // Only apply on tablets & desktops
+//         "use strict";
+//         gsap.registerPlugin(ScrollTrigger);
 
-    if (width > 300) {
+//         const cards = gsap.utils.toArray(".work-card-ms .cards .card-item");
 
-        "use strict";
-        gsap.registerPlugin(ScrollTrigger);
+//         cards.forEach((card, index) => {
+//             gsap.to(card, {
+//                 y: -100,
+//                 scale: 0.95,                // subtle zoom-out
+//                 rotationX: 5,               // 3D tilt effect
+//                 ease: "none",
+//                 scrollTrigger: {
+//                     trigger: card,
+//                     start: "center center",
+//                     end: "bottom center",
+//                     pin: true,
+//                     scrub: true,
+//                     pinSpacing: true,
+//                     markers: false
+//                 }
+//             });
+//         });
 
-        const cards = gsap.utils.toArray(".work-card-ms .cards .card-item");
+//         // Refresh ScrollTrigger after everything is loaded
+//         window.addEventListener("load", () => {
+//             ScrollTrigger.refresh();
+//         });
+//     }
+// });
 
-        cards.forEach((card, index) => {
+// This code is commented out as it was not functioning correctly.
+// It was intended to create a pinning effect for each card in the work section.
+// Uncomment and modify as needed for your specific use case.
+// $(function () {
+//     const width = $(window).width();
 
-            gsap.to(card, {
-                y: -100, // Move upward by 100px
-                ease: "none",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "center center",
-                    end: "bottom center",
-                    pin: true,
-                    scrub: true,   // Smooth animation synced with scroll
-                    pinSpacing: false, // Prevent layout collapsing
-                    markers: false  // Set to true for debugging
-                }
-            });
-        });
-    }
-});
+//     if (width > 300) {
+
+//         "use strict";
+//         gsap.registerPlugin(ScrollTrigger);
+
+//         const cards = gsap.utils.toArray(".work-card-ms .cards .card-item");
+
+//         cards.forEach((card, index) => {
+
+//             gsap.to(card, {
+//                 y: -100, // Move upward by 100px
+//                 ease: "none",
+//                 scrollTrigger: {
+//                     trigger: card,
+//                     start: "center center",
+//                     end: "bottom center",
+//                     pin: true,
+//                     scrub: true,   // Smooth animation synced with scroll
+//                     pinSpacing: false, // Prevent layout collapsing
+//                     markers: false  // Set to true for debugging
+//                 }
+//             });
+//         });
+//     }
+// });
 $(function () {
     $(".faq-question").on("click", function () {
         const answer = $(this).next(".faq-answer");
