@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="HTML5 Template Hubfolio Multi-Purpose themeforest">
+    <meta name="description" content="Megance - Premium Shoe Collection">
+    <meta name="author" content="">
+
+    <!-- Title  -->
+    <title>Aeon v2 ECLIPSE - MEGANCE</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/imgs/megance_logo_w.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="/common/css/plugins.css">
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="/common/css/common_style.css">
+    <link rel="stylesheet" href="assets/css/home11-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Maven+Pro:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://db.onlinewebfonts.com/c/a8d7b985e4eb8c5d34f2302ffe83e917?family=Nike+Futura+ND"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* Product Page Specific Styles */
+        .product-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #f8f8f8 100%);
+        }
+
+        .product-images {
+            position: relative;
+        }
+
+        .main-product-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            min-height: 400px;
+            object-fit: cover;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            object-fit: cover;
+            user-select: none;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #000;
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            padding-left: 40px;
+        }
+
+        .product-badge {
+            background: #000;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .size-selector {
+            margin-bottom: 30px;
+        }
+
+        .size-selector h6 {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .size-option:hover,
+        .size-option.active {
+            border-color: #000;
+            background: #000;
+            color: #fff;
+        }
+
+        .color-selector {
+            margin-bottom: 30px;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .color-option:hover,
+        .color-option.active {
+            border-color: #000;
+            transform: scale(1.1);
+        }
+
+        .add-to-cart-section {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f8f8f8;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .add-to-cart-btn {
+            background: #000;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wishlist-btn:hover {
+            border-color: #000;
+            background: #000;
+            color: #fff;
+        }
+
+        .product-features {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            opacity: 0.7;
+        }
+
+        .related-products {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .product-card-small {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card-small:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card-small img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-info {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+            margin-top: 40px;
+        }
+
+        .info-tabs {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-tab {
+            padding: 15px 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .info-tab.active {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        .info-content {
+            display: none;
+            min-height: 200px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .product-details {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .add-to-cart-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" />
+        </svg>
+
+        <div class="loader-wrap-heading">
+            <div class="logo-blink">
+                <img src="assets/imgs/megance_logo_w.png" style="width: 400px;" alt="logo" />
+            </div>
+            <!-- <div class="load-text">
+                <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- ==================== End Loading ==================== -->
+
+    <div class="cursor"></div>
+
+    <!-- ==================== Start progress-scroll-button ==================== -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <!-- ==================== Start Navbar ==================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-lg-3">
+                    <div class="logo-wrapper">
+                        <a class="logo" href="index.html">
+                            <img src="assets/imgs/megance_logo_b.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 justify-content-center text-center">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Club</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="topnav d-flex align-items-center justify-content-end">
+                        <div class="menu-icon cursor-pointer" style="margin-left: 15px;">
+                            <span class="icon ti-align-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== Start Hamburger Menu ==================== -->
+    <div class="hamenu">
+        <div class="close-menu cursor-pointer ti-close"></div>
+        <div class="container-fluid rest d-flex">
+            <div class="menu-links">
+                <ul class="main-menu rest">
+                    <li>
+                        <div class="o-hidden">
+                            <a href="index.html" class="link"><span class="fill-text" data-text="Home">Home</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="o-hidden">
+                            <a href="#" class="link"><span class="fill-text" data-text="Shop">Shop</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="o-hidden">
+                            <a href="#" class="link"><span class="fill-text" data-text="About Us">About Us</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="o-hidden">
+                            <a href="#" class="link"><span class="fill-text" data-text="Club">Club</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="o-hidden">
+                            <a href="#" class="link"><span class="fill-text" data-text="Contact Us">Contact Us</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cont-info valign">
+                <div class="text-center full-width">
+                    <div class="logo">
+                        <img src="assets/imgs/megance_logo_w.png" alt="">
+                    </div>
+                    <div class="social-icon mt-40">
+                        <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                        <a href="#"> <i class="fab fa-x-twitter"></i> </a>
+                        <a href="#"> <i class="fab fa-linkedin-in"></i> </a>
+                        <a href="#"> <i class="fab fa-instagram"></i> </a>
+                    </div>
+                    <div class="item mt-30">
+                        <h5>541 Melville Geek, <br> Palo Alto, CA 94301</h5>
+                    </div>
+                    <div class="item mt-10">
+                        <h5><a href="#0">Hello@email.com</a></h5>
+                        <h5 class="underline"><a href="#0">+1 840 841 25 69</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main>
+
+                <!-- ==================== Start Product Hero ==================== -->
+                <section class="product-hero">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="product-images">
+                                    <img src="assets/imgs/shoes/s1.png" alt="Aeon v2 ECLIPSE" class="main-product-image" id="mainImage">
+                                    <div class="thumbnail-images">
+                                        <img src="assets/imgs/shoes/s1.png" alt="Front View" class="thumbnail active" onclick="return changeImage(this, event)">
+                                        <img src="assets/imgs/shoes/s2.jpg" alt="Side View" class="thumbnail" onclick="return changeImage(this, event)">
+                                        <img src="assets/imgs/shoes/s1.png" alt="Back View" class="thumbnail" onclick="return changeImage(this, event)">
+                                        <img src="assets/imgs/shoes/s2.jpg" alt="Detail View" class="thumbnail" onclick="return changeImage(this, event)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="product-details">
+                                    <div class="product-badge">BESTSELLER</div>
+                                    <h1 class="product-title">Aeon v2 ECLIPSE</h1>
+                                    <div class="product-price">₹ 4,499</div>
+                                    <p class="product-description">
+                                        Experience the future of footwear with our revolutionary Aeon v2 ECLIPSE. Crafted for comfort, 
+                                        designed for performance, and built for the bold. These sneakers feature advanced cushioning 
+                                        technology and premium materials that adapt to your every step.
+                                    </p>
+
+                                    <!-- Size Selector -->
+                                    <div class="size-selector">
+                                        <h6>Size</h6>
+                                        <div class="size-options">
+                                            <div class="size-option" onclick="return selectSize(this, event)">6</div>
+                                            <div class="size-option" onclick="return selectSize(this, event)">7</div>
+                                            <div class="size-option active" onclick="return selectSize(this, event)">8</div>
+                                            <div class="size-option" onclick="return selectSize(this, event)">9</div>
+                                            <div class="size-option" onclick="return selectSize(this, event)">10</div>
+                                            <div class="size-option" onclick="return selectSize(this, event)">11</div>
+                                            <div class="size-option" onclick="return selectSize(this, event)">12</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Color Selector -->
+                                    <div class="color-selector">
+                                        <h6>Color</h6>
+                                        <div class="color-options">
+                                            <div class="color-option active" style="background: #000;" onclick="return selectColor(this, event)"></div>
+                                            <div class="color-option" style="background: #fff; border: 1px solid #ddd;" onclick="return selectColor(this, event)"></div>
+                                            <div class="color-option" style="background: #333;" onclick="return selectColor(this, event)"></div>
+                                            <div class="color-option" style="background: #8B4513;" onclick="return selectColor(this, event)"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add to Cart Section -->
+                                    <div class="add-to-cart-section">
+                                        <div class="quantity-selector">
+                                            <button class="quantity-btn" onclick="return changeQuantity(-1, event)">-</button>
+                                            <input type="number" class="quantity-input" value="1" min="1" id="quantity">
+                                            <button class="quantity-btn" onclick="return changeQuantity(1, event)">+</button>
+                                        </div>
+                                        <button class="add-to-cart-btn">Add to Cart</button>
+                                        <button class="wishlist-btn">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Product Features -->
+                                    <div class="product-features">
+                                        <div class="feature-item">
+                                            <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 9.74s9-4.19 9-9.74V7L12 2z"/>
+                                            </svg>
+                                            <span>Premium Quality Materials</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                            <span>30-Day Return Policy</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                            </svg>
+                                            <span>Free Shipping on Orders Over ₹3,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Information Tabs -->
+                        <div class="product-info">
+                            <div class="info-tabs">
+                                <div class="info-tab active" onclick="return switchTab(this, 'description', event)">Description</div>
+                                <div class="info-tab" onclick="return switchTab(this, 'specifications', event)">Specifications</div>
+                                <div class="info-tab" onclick="return switchTab(this, 'reviews', event)">Reviews</div>
+                                <div class="info-tab" onclick="return switchTab(this, 'shipping', event)">Shipping & Returns</div>
+                            </div>
+
+                            <div class="info-content active" id="description">
+                                <h6>Product Description</h6>
+                                <p>The Aeon v2 ECLIPSE represents the pinnacle of modern sneaker design. Built with cutting-edge technology and premium materials, these shoes deliver unparalleled comfort and style. The innovative sole technology provides superior cushioning and energy return, making them perfect for both casual wear and athletic activities.</p>
+                                <p>Features include breathable mesh upper, reinforced heel support, and our signature grip sole technology. The sleek design seamlessly blends performance with street-ready style.</p>
+                            </div>
+
+                            <div class="info-content" id="specifications">
+                                <h6>Technical Specifications</h6>
+                                <ul>
+                                    <li><strong>Upper Material:</strong> Premium synthetic mesh with leather accents</li>
+                                    <li><strong>Sole:</strong> EVA midsole with rubber outsole</li>
+                                    <li><strong>Weight:</strong> 280g (Size 9)</li>
+                                    <li><strong>Drop:</strong> 8mm heel-to-toe offset</li>
+                                    <li><strong>Closure:</strong> Lace-up system</li>
+                                    <li><strong>Available Sizes:</strong> 6-12 (US sizing)</li>
+                                </ul>
+                            </div>
+
+                            <div class="info-content" id="reviews">
+                                <h6>Customer Reviews</h6>
+                                <div class="review-summary">
+                                    <div class="rating-stars mb-3">
+                                        <span style="color: #ffc107;">★★★★★</span>
+                                        <span style="margin-left: 10px;">4.8/5 (124 reviews)</span>
+                                    </div>
+                                </div>
+                                <div class="review-item" style="border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px;">
+                                    <h6>Amazing comfort!</h6>
+                                    <div class="rating-stars mb-2">
+                                        <span style="color: #ffc107;">★★★★★</span>
+                                    </div>
+                                    <p>"These shoes are incredibly comfortable. I wear them all day and my feet never hurt. Great quality and style too!"</p>
+                                    <small style="color: #666;">- Sarah M., Verified Purchase</small>
+                                </div>
+                                <div class="review-item">
+                                    <h6>Perfect for daily wear</h6>
+                                    <div class="rating-stars mb-2">
+                                        <span style="color: #ffc107;">★★★★☆</span>
+                                    </div>
+                                    <p>"Love the design and they're very versatile. Good quality construction. Only wish they came in more colors."</p>
+                                    <small style="color: #666;">- Mike D., Verified Purchase</small>
+                                </div>
+                            </div>
+
+                            <div class="info-content" id="shipping">
+                                <h6>Shipping & Returns</h6>
+                                <h6>Shipping Information:</h6>
+                                <ul>
+                                    <li>Free shipping on orders over ₹3,000</li>
+                                    <li>Standard delivery: 5-7 business days</li>
+                                    <li>Express delivery: 2-3 business days (additional charges apply)</li>
+                                    <li>Same-day delivery available in select cities</li>
+                                </ul>
+                                <h6>Return Policy:</h6>
+                                <ul>
+                                    <li>30-day return window from delivery date</li>
+                                    <li>Items must be in original condition with tags</li>
+                                    <li>Free returns for defective products</li>
+                                    <li>Exchange available for size/color issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== End Product Hero ==================== -->
+
+                <!-- ==================== Start Related Products ==================== -->
+                <section class="related-products">
+                    <div class="container">
+                        <div class="sec-head text-center mb-70">
+                            <h6 class="sub-title main-color mb-15">You might also like</h6>
+                            <h3 class="text-u">Related Products</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 mb-30">
+                                <div class="product-card-small">
+                                    <img src="assets/imgs/shoes/s2.jpg" alt="Volt Boost Max">
+                                    <h6 class="mb-10">Volt Boost Max</h6>
+                                    <p class="fz-14 mb-15">₹ 3,899</p>
+                                    <a href="#" class="btn-small">View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-30">
+                                <div class="product-card-small">
+                                    <img src="assets/imgs/shoes/s1.png" alt="Stride Runner Pro">
+                                    <h6 class="mb-10">Stride Runner Pro</h6>
+                                    <p class="fz-14 mb-15">₹ 3,299</p>
+                                    <a href="#" class="btn-small">View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-30">
+                                <div class="product-card-small">
+                                    <img src="assets/imgs/shoes/s2.jpg" alt="Echo Flex Zoom">
+                                    <h6 class="mb-10">Echo Flex Zoom</h6>
+                                    <p class="fz-14 mb-15">₹ 4,799</p>
+                                    <a href="#" class="btn-small">View Details</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-30">
+                                <div class="product-card-small">
+                                    <img src="assets/imgs/shoes/s1.png" alt="Nimbus Street Pro">
+                                    <h6 class="mb-10">Nimbus Street Pro</h6>
+                                    <p class="fz-14 mb-15">₹ 3,999</p>
+                                    <a href="#" class="btn-small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== End Related Products ==================== -->
+
+            </main>
+
+            <!-- ==================== Start Footer ==================== -->
+            <footer class="footer-sa pb-80">
+                <div class="container section-padding">
+                    <div class="sec-head mb-80">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <a href="index.html" class="logo md-mb50">
+                                    <img src="assets/imgs/megance_logo_w.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <h4>We hope to empower user and simplify
+                                    <span class="sub-color inline">their everyday lives.</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="row">
+                            <div class="col-lg-6 offset-lg-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="item">
+                                            <span class="sub-color">location</span>
+                                            <p>152 Thatcher Road St, Mahattan, NY 10463, US</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end justify-end">
+                                        <div class="item">
+                                            <span class="sub-color">inquiry</span>
+                                            <p>hello@hubfolio.agency</p>
+                                            <p>+0685689696</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 offset-lg-5">
+                                <div class="social-icon">
+                                    <a href="#0">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                    <a href="#0">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="#0">
+                                        <i class="fa-brands fa-dribbble"></i>
+                                    </a>
+                                    <a href="#0">
+                                        <i class="fa-brands fa-behance"></i>
+                                    </a>
+                                    <a href="#0">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="copy sub-color md-mb30">
+                                    <p>© 2025 - 2026 <a href="#0">Megance</a>. All Right Reserved</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end">
+                                <div class="links sub-color d-flex justify-content-between">
+                                    <a href="index.html">Home</a>
+                                    <a href="#" class="active">Shop</a>
+                                    <a href="#">About Us</a>
+                                    <a href="#">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/common/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/common/js/lib/jquery-migrate-3.4.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="/common/js/lib/plugins.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="/common/js/gsap_lib/ScrollSmoother.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/common/js/gsap_lib/SplitText.min.js"></script>
+
+    <!-- common scripts -->
+    <script src="/common/js/common_scripts.js"></script>
+
+    <!-- custom scripts -->
+    <script src="assets/js/scripts.js"></script>
+
+    <script>
+        // Image gallery functionality
+        function changeImage(thumbnail, event) {
+            if (event) event.preventDefault();
+            
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            // Remove active class from all thumbnails
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            thumbnail.classList.add('active');
+            
+            // Change main image smoothly
+            mainImage.style.opacity = '0.7';
+            setTimeout(() => {
+                mainImage.src = thumbnail.src;
+                mainImage.style.opacity = '1';
+            }, 150);
+            
+            return false;
+        }
+
+        // Size selection
+        function selectSize(sizeElement, event) {
+            if (event) event.preventDefault();
+            
+            const sizes = document.querySelectorAll('.size-option');
+            sizes.forEach(size => size.classList.remove('active'));
+            sizeElement.classList.add('active');
+            
+            return false;
+        }
+
+        // Color selection
+        function selectColor(colorElement, event) {
+            if (event) event.preventDefault();
+            
+            const colors = document.querySelectorAll('.color-option');
+            colors.forEach(color => color.classList.remove('active'));
+            colorElement.classList.add('active');
+            
+            return false;
+        }
+
+        // Quantity change
+        function changeQuantity(change, event) {
+            if (event) event.preventDefault();
+            
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            let newValue = currentValue + change;
+            
+            if (newValue >= 1) {
+                quantityInput.value = newValue;
+            }
+            
+            return false;
+        }
+
+        // Tab switching
+        function switchTab(tabElement, contentId, event) {
+            if (event) event.preventDefault();
+            
+            // Store the current scroll position
+            const currentScrollY = window.scrollY;
+            
+            // Remove active class from all tabs and contents
+            const tabs = document.querySelectorAll('.info-tab');
+            const contents = document.querySelectorAll('.info-content');
+            
+            // Fade out current content
+            const activeContent = document.querySelector('.info-content.active');
+            if (activeContent) {
+                activeContent.style.opacity = '0';
+                setTimeout(() => {
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    contents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tabElement.classList.add('active');
+                    const newContent = document.getElementById(contentId);
+                    newContent.classList.add('active');
+                    
+                    // Fade in new content
+                    setTimeout(() => {
+                        newContent.style.opacity = '1';
+                    }, 50);
+                    
+                    // Restore scroll position to prevent jumping
+                    window.scrollTo(0, currentScrollY);
+                }, 150);
+            } else {
+                tabs.forEach(tab => tab.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                
+                tabElement.classList.add('active');
+                document.getElementById(contentId).classList.add('active');
+                
+                window.scrollTo(0, currentScrollY);
+            }
+            
+            return false;
+        }
+
+        // Loading animation
+        window.addEventListener("load", function () {
+            const loaderWrap = document.querySelector(".loader-wrap");
+            const loaderHeading = document.querySelector(".loader-wrap-heading");
+            const logo = document.querySelector(".logo-blink img");
+
+            // 1. Logo appears
+            gsap.fromTo(
+                logo,
+                { opacity: 0, scale: 0.8 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power3.out"
+                }
+            );
+
+            // 2. After 2s, animate logo + text OUT fast
+            gsap.delayedCall(2, () => {
+                gsap.to(loaderHeading, {
+                    opacity: 0,
+                    y: -60,
+                    duration: 0.5,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        // 3. Once logo+text are gone, fade out background
+                        gsap.to(loaderWrap, {
+                            opacity: 0,
+                            duration: 1,
+                            ease: "power2.out",
+                            onComplete: () => {
+                                loaderWrap.style.display = "none";
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
+            // Get selected options
+            const selectedSize = document.querySelector('.size-option.active')?.textContent;
+            const selectedQuantity = document.getElementById('quantity').value;
+            
+            if (!selectedSize) {
+                alert('Please select a size');
+                return;
+            }
+            
+            // Add to cart logic here
+            alert(`Added ${selectedQuantity} x Aeon v2 ECLIPSE (Size ${selectedSize}) to cart!`);
+        });
+
+        // Wishlist functionality
+        document.querySelector('.wishlist-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                this.style.background = '#000';
+                this.style.color = '#fff';
+                alert('Added to wishlist!');
+            } else {
+                this.style.background = '#fff';
+                this.style.color = '#000';
+                alert('Removed from wishlist!');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
